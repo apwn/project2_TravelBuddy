@@ -1,12 +1,19 @@
 <h1>Create an account</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for :user do |f| %>
 
-  Name: <%= f.text_field :name %>
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+<%= render 'shared/error_messages' %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
 
 <% end %>

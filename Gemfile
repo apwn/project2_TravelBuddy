@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'materialize-sass'
 gem 'pg'
 gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
