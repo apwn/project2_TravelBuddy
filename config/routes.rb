@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  resources :countries
-  # resources :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+
   root 'home#index'
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
+  resources :users, :only => [:show, :edit, :update, :destroy], param: :username, path: 'user'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  resources :countries, path: 'map'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

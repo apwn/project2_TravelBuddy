@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "materialize/components/color";
+ $primary-color: color("blue", "darken-4") !default;
+ @import 'materialize';
+ @import "font-awesome-sprockets";
+@import "font-awesome";
