@@ -6,10 +6,12 @@
     <h1 class="profile-page valign center-align">Hello <%= current_user.name %></h1>
   </div>
 </div>
+
 <div class="profile-info">
-  <div class="section name">
+  <%= render 'shared/error_messages' %>
+  <div class="section">
     <h5>Name</h5>
-    <div class="profile-section">
+    <div class="profile-section name">
         <div class="user-info">
           <p><%= @user.name %></p>
         </div>
@@ -17,23 +19,38 @@
           <%= icon('pencil-square-o fa-lg') %>
         </div>
     </div>
+    <div class="profile-section name-edit">
+        <div class="user-info">
+          <div class="input-field col s12">
+            <%= form_for @user, url: user_path, :method => :patch do |f| %>
+          <input id="name" name="user[name]" type="text" class="validate" value="<%= @user.name %>">
+          </div>
+        </div>
+        <div class="save-icon">
+          <button type="submit">
+            <%= icon('floppy-o fa-lg') %>
+          </button>
+            <% end %>
+        </div>
+    </div>
   </div>
+
   <div class="divider"></div>
-  <div class="section username">
+  <div class="section">
     <h5>Username</h5>
-    <div class="profile-section">
+    <div class="profile-section username">
         <div class="user-info">
           <p><%= @user.username %></p>
         </div>
         <div class="edit-icon">
-          <%= icon('pencil-square-o fa-lg') %>
         </div>
     </div>
   </div>
+
   <div class="divider"></div>
-  <div class="section email">
+  <div class="section">
     <h5>Email</h5>
-    <div class="profile-section">
+    <div class="profile-section email">
         <div class="user-info">
           <p><%= @user.email %></p>
         </div>
@@ -41,5 +58,48 @@
           <%= icon('pencil-square-o fa-lg') %>
         </div>
     </div>
+    <div class="profile-section email-edit">
+        <div class="user-info">
+          <div class="input-field col s12">
+            <%= form_for @user, url: user_path, :method => :patch do |f| %>
+          <input id="name" name="user[email]" type="text" class="validate" value="<%= @user.email %>">
+          </div>
+        </div>
+        <div class="save-icon">
+          <button type="submit">
+            <%= icon('floppy-o fa-lg') %>
+          </button>
+            <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="password-edit">
+    <div class="divider"></div>
+    <div class="section">
+      <h5>Password</h5>
+      <div class="profile-section">
+          <div class="user-info row">
+            <%= form_for @user, url: user_path, :method => :patch do |f| %>
+            <div class="input-field col s6">
+            <input id="name" name="user[password]" type="password" class="validate" placeholder="password">
+            </div>
+            <div class="input-field col s6">
+            <input id="name" name="user[password_confirmation]" type="password" class="validate" placeholder="password">
+            </div>
+          </div>
+          <div class="save-icon">
+            <button type="submit">
+              <%= icon('floppy-o fa-lg') %>
+            </button>
+              <% end %>
+          </div>
+      </div>
+  </div>
+</div>
+  <div class="divider"> </div>
+  <div class="user-edit-buttons">
+    <a class="waves-effect waves-light btn show-pwd"><%= icon('unlock-alt', '', class: 'material-icons left') %>Change password</a>
+    <a class="waves-effect waves-light btn"><%= icon('trash-o', '', class: 'material-icons left') %>Delete account</a>
   </div>
 </div>

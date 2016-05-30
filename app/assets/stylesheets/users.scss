@@ -26,11 +26,43 @@
 }
 
 .user-info {
-  width: 80%;
+  width: 90%;
   margin-left: 0;
 }
 
-.edit-icon {
-  width: 20%;
+.edit-icon,
+.save-icon {
+  width: 10%;
   text-align: right;
+}
+
+.password-edit {
+  display: none;
+}
+
+.save-icon button {
+  background: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+.name-edit {
+  display: none;
+}
+
+.username-edit {
+  display: none;
+}
+
+.email-edit {
+  display: none;
+}
+
+.user-edit-buttons {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.user-edit-buttons a {
+  margin: 0 25px;
 }

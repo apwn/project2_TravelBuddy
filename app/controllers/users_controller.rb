@@ -14,12 +14,18 @@ class UsersController < ApplicationController
       end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
   def show
     @user = User.find_by username: (params[:username])
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(user_params)
+      # Handle a successful update.
+      redirect_to user_path
+    else
+      render :show
+    end
   end
 
 private

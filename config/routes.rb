@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  resources :users, :only => [:show, :edit, :update, :destroy], param: :username, path: 'user'
+  resources :users, :only => [:show, :update, :destroy], param: :username, path: 'user'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
