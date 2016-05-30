@@ -1,3 +1,45 @@
-Name: <%= @user.name %><br>
-Username : <%= @user.username %>
-Email: <%= @user.email %>
+<div class="valign-wrapper profile-top row">
+  <div class="col s3 center-align">
+    <img src="<%= gravatar_for current_user %>?s=150&d=mm&r=pg" alt= <%= current_user.name %> class="profile-gravatar circle valign">
+  </div>
+  <div class="col s9">
+    <h1 class="profile-page valign center-align">Hello <%= current_user.name %></h1>
+  </div>
+</div>
+<div class="profile-info">
+  <div class="section name">
+    <h5>Name</h5>
+    <div class="profile-section">
+        <div class="user-info">
+          <p><%= @user.name %></p>
+        </div>
+        <div class="edit-icon">
+          <%= icon('pencil-square-o fa-lg') %>
+        </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section username">
+    <h5>Username</h5>
+    <div class="profile-section">
+        <div class="user-info">
+          <p><%= @user.username %></p>
+        </div>
+        <div class="edit-icon">
+          <%= icon('pencil-square-o fa-lg') %>
+        </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="section email">
+    <h5>Email</h5>
+    <div class="profile-section">
+        <div class="user-info">
+          <p><%= @user.email %></p>
+        </div>
+        <div class="edit-icon">
+          <%= icon('pencil-square-o fa-lg') %>
+        </div>
+    </div>
+  </div>
+</div>

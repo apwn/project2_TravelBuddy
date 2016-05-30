@@ -13,8 +13,8 @@
         <a href="/" class="brand-logo">Travel Maps</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
-          <li><img src="<%= gravatar_for current_user %>?s=40&d=mm&r=pg" alt= <%= current_user.name %> class="nav-gravatar circle"><a href="#"><%= current_user.name %></a></li>
-          <li><a href="../logout"><%= icon("sign-out fa") %></a></li>
+          <li><img src="<%= gravatar_for current_user %>?s=40&d=mm&r=pg" alt= <%= current_user.name %> class="nav-gravatar circle"><a href="<%= user_path username: current_user.username %>"><%= current_user.name %></a></li>
+          <li><a href="../logout"><%= icon("sign-out fa", '', class: 'valign') %></a></li>
         <% else %>
           <li><%= link_to 'Login', '/login' %></li>
           <li><%= link_to 'Signup', '/signup' %></li>
