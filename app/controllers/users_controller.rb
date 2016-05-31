@@ -16,6 +16,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by username: (params[:username])
+    if current_user
+      render :show
+    else
+      redirect_to :login
+    end
   end
 
   def update
@@ -26,6 +31,13 @@ class UsersController < ApplicationController
     else
       render :show
     end
+  end
+
+  def destroy
+    @user = current_user
+    session[:user_id] = nil
+    @user.destroy
+    redirect_to '/'
   end
 
 private
