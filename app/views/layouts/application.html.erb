@@ -3,6 +3,7 @@
 <head>
   <title>Travel Maps</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= include_gon(:init => true) %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
