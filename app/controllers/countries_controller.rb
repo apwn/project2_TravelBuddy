@@ -3,13 +3,15 @@ class CountriesController < ApplicationController
   before_filter :authorize
 
   def index
-    
+
   end
 
   def show
     @cntrycode = "#{params[:id]}"
     gon.country = @cntrycode
     @country = HTTParty.get "https://restcountries.eu/rest/v1/alpha/#{ @cntrycode }"
+    gon.capital = @country["capital"]
+    gon.countryname = @country["name"]
   end
 
 end

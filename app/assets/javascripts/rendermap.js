@@ -13,6 +13,9 @@ $(function(){
             "stroke-opacity": 1
           }
         },
+        onRegionClick: function (event, code) {
+          window.location.href = "../map/" + code.toLowerCase()
+          },
         series: {
           regions: [{
               // values: {
@@ -26,7 +29,7 @@ $(function(){
       if (gon.country){
       var country = gon.country.toUpperCase();
       var countryColor = {};
-      countryColor[country] = '#88f2f8';
+      countryColor[country] = '#008080';
 
       var map = $('.world-map').vectorMap('get', 'mapObject');
       map.series.regions[0].setValues(countryColor);

@@ -4,9 +4,56 @@
 
 .world-map {
   margin: 40px 0;
-  height: 400px;
+  height: 370px;
 }
 
 .map-title {
   margin-top: 30px;
+}
+
+.map-legend {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.visited-country,
+.legend-colors {
+  border: 1px dotted #bfbfbf;
+  width: 300px;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.visited-country p,
+.legend-colors p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.country-details {
+  display: flex;
+  justify-content: space-around;
+}
+
+.country-info,
+.country-info2,
+.weather-info {
+  border: 1px dashed #bfbfbf;
+  margin: 10px;
+  padding: 10px;
+  height: 240px;
+  width: 30%;
+}
+
+.ctry-info-title {
+  font-size: 1.6em;
+  margin: 6px 0 10px;
+  text-align: center;
+}
+
+.country-pics {
+  width: 100%;
+  border: 1px dashed #bfbfbf;
+  margin: 20px 0 40px;
 }

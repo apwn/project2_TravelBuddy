@@ -16,3 +16,4 @@
 //= require_tree .
 //= require jquery-jvectormap-2.0.3.min.js
 //= require jquery-jvectormap-world-mill.js
+//= require jquery.simpleWeather.min.js

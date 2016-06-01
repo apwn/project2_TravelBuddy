@@ -1,12 +1,39 @@
-<h4 class="center-align map-title">What kind of World Nomad are you?</h4>
+<h4 class="center-align map-title">Map of <%= @country["name"] %></h4>
 
 <div class='world-map <%= "#{params[:id]}" %>'></div>
 
-<div class="country-info container">
-  Country name: <%= @country["name"] %><br>
-  Capital: <%= @country["capital"] %><br>
-  Region: <%= @country["region"] %><br>
-  Population: <%= @country["population"] %><br>
-  Calling code: +<%= @country["callingCodes"][0] %><br>
-  Area: <%= @country["area"].round %> &#13218;
+
+<div class="">
+  <div class="map-legend">
+    <div class="visited-country">
+      <p>test</p>
+    </div>
+    <div class="legend-colors">
+      <p>test</p>
+    </div>
+  </div>
+
+<div class="country-details">
+  <div class="country-info">
+    <h4 class="ctry-info-title">Country Info</h4>
+    Country name: <%= @country["name"] %><br>
+    Capital: <%= @country["capital"] %><br>
+    Region: <%= @country["region"] %><br>
+    Population: <%= @country["population"] %><br>
+    Calling code: +<%= @country["callingCodes"][0] %><br>
+    Area: <%= @country["area"].round %> &#13218;
+  </div>
+  <div class="country-info2">
+    <h4 class="ctry-info-title">Country Info</h4>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  </div>
+  <div class="weather-info valign-wrapper">
+    
+  </div>
+</div>
+
+<div class="country-pics">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+</div>
+
 </div>
