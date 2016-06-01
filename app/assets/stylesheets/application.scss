@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require jquery-jvectormap-2.0.3.css
+ *
  */
 
  @import "materialize/components/color";
@@ -20,6 +21,7 @@
  @import 'materialize';
  @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flickity.css";
 
 body {
   font-size: 1.1em;

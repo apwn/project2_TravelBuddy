@@ -35,13 +35,14 @@
   </div>
 </div>
 
-<div class="country-pics">
-  <% for i in 1..7 %>
+<div class="country-pics gallery js-flickity"
+  data-flickity-options='{ "setGallerySize": false, "imagesLoaded": true, "wrapAround": true, "autoPlay": true }'>
+  <% for i in 1..10 %>
     <% picid = @flickrimg["photos"]["photo"][i]["id"] %>
     <% picsecret = @flickrimg["photos"]["photo"][i]["secret"] %>
     <% picfarm = @flickrimg["photos"]["photo"][i]["farm"] %>
     <% picserver = @flickrimg["photos"]["photo"][i]["server"] %>
-    <img src="http://farm<%= picfarm %>.static.flickr.com/<%= picserver %>/<%= picid %>_<%= picsecret %>.jpg" class="country-pic">
+    <div class="gallery-cell"><img src="http://farm<%= picfarm %>.static.flickr.com/<%= picserver %>/<%= picid %>_<%= picsecret %>.jpg"></div>
   <% end %>
 </div>
 
