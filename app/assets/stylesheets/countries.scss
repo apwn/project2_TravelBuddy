@@ -14,21 +14,23 @@
 .map-legend {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .visited-country,
 .legend-colors {
   border: 1px dotted #bfbfbf;
-  width: 300px;
+  width: 40%;
   border-radius: 3px;
   padding: 2px 5px;
+  max-height: 30px;
 }
 
 .visited-country p,
 .legend-colors p {
   margin: 0;
   font-size: 0.9em;
+  display: inline-block;
 }
 
 .country-details {
@@ -56,4 +58,14 @@
   width: 100%;
   border: 1px dashed #bfbfbf;
   margin: 20px 0 40px;
+}
+
+.box-selected {
+  width: 14px;
+  height: 14px;
+  background: #008080;
+}
+
+.country-pic {
+  height: 200px;
 }

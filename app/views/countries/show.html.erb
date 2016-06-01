@@ -5,18 +5,21 @@
 
 <div class="">
   <div class="map-legend">
-    <div class="visited-country">
+    <div class="visited-country valign-wrapper">
       <p>test</p>
     </div>
-    <div class="legend-colors">
-      <p>test</p>
+    <div class="legend-colors valign-wrapper row">
+      <div class='valign col'><div class='box-selected valign'></div></div>
+      <div class='col s5'><p>selected country</p></div>
+      <div class='col s1'></div>
+      <div class='col s5'></div>
     </div>
   </div>
 
 <div class="country-details">
   <div class="country-info">
     <h4 class="ctry-info-title">Country Info</h4>
-    Country name: <%= @country["name"] %><br>
+    Country name: <%= @country["name"] %> <img src="/assets/flags/<%= @cntrycode %>.png"><br>
     Capital: <%= @country["capital"] %><br>
     Region: <%= @country["region"] %><br>
     Population: <%= @country["population"] %><br>
@@ -28,12 +31,18 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   </div>
   <div class="weather-info valign-wrapper">
-    
+
   </div>
 </div>
 
 <div class="country-pics">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  <% for i in 1..7 %>
+    <% picid = @flickrimg["photos"]["photo"][i]["id"] %>
+    <% picsecret = @flickrimg["photos"]["photo"][i]["secret"] %>
+    <% picfarm = @flickrimg["photos"]["photo"][i]["farm"] %>
+    <% picserver = @flickrimg["photos"]["photo"][i]["server"] %>
+    <img src="http://farm<%= picfarm %>.static.flickr.com/<%= picserver %>/<%= picid %>_<%= picsecret %>.jpg" class="country-pic">
+  <% end %>
 </div>
 
 </div>
