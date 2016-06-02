@@ -9,12 +9,41 @@ class CountriesController < ApplicationController
   def show
     @cntrycode = "#{params[:id]}"
     gon.country = @cntrycode
-    @country = HTTParty.get "https://restcountries.eu/rest/v1/alpha/#{ @cntrycode }"
-    gon.capital = @country["capital"]
-    gon.countryname = @country["name"]
-    @cntryname = @country["name"].downcase
+    @countryinfo = CountryInfo.find_by countrycode: @cntrycode
 
-    # @flickrimg = HTTParty.get "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ae5c1da80ad14208768b6c79a7de337b&text=france&sort=interestingness-desc&content_type=1&format=json&nojsoncallback=1&auth_token=72157668350570510-27a14c940b472184&api_sig=9a5b379027acb728169b025ee86df47f"
+    if @countryinfo
+      @countryname = @countryinfo.name
+      @countrycapital = @countryinfo.capital
+      @countryregion = @countryinfo.region
+      @countrypopulation = @countryinfo.population
+      @countrycallingcode = @countryinfo.callingcode
+      @countryarea = @countryinfo.area
+    else
+      @country = HTTParty.get "https://restcountries.eu/rest/v1/alpha/#{ @cntrycode }"
+      newcountry = CountryInfo.new
+      newcountry.name = @country["name"]
+      newcountry.countrycode = @cntrycode
+      newcountry.capital = @country["capital"]
+      newcountry.region = @country["region"]
+      newcountry.population = @country["population"]
+      newcountry.area = @country["area"]
+      newcountry.callingcode = @country["callingCodes"][0]
+      newcountry.demonym = @country["demonym"]
+      newcountry.currency = @country["currencies"][0]
+      newcountry.save
+
+      @countryname = @country["name"]
+      @countrycapital = @country["capital"]
+      @countryregion = @country["region"]
+      @countrypopulation = @country["population"]
+      @countrycallingcode = @country["callingCodes"][0]
+      @countryarea = @country["area"]
+    
+    end
+
+    gon.capital = @countrycapital
+    gon.countryname = @countryname
+    @cntryname = @countryname.downcase
 
     @flickrimg = HTTParty.get "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f1d62c1433245e6f2024103335abd75a&text=#{ @cntryname } travel&sort=relevance&content_type=1&format=json&nojsoncallback=1"
   end

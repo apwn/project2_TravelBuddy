@@ -1,4 +1,4 @@
-<h4 class="center-align map-title">Map of <%= @country["name"] %></h4>
+<h4 class="center-align map-title">Map of <%= @countryname %></h4>
 
 <div class='world-map <%= "#{params[:id]}" %>'></div>
 
@@ -19,12 +19,12 @@
 <div class="country-details">
   <div class="country-info">
     <h4 class="ctry-info-title">Country Info</h4>
-    Country name: <%= @country["name"] %> <img src="/assets/flags/<%= @cntrycode %>.png"><br>
-    Capital: <%= @country["capital"] %><br>
-    Region: <%= @country["region"] %><br>
-    Population: <%= @country["population"] %><br>
-    Calling code: +<%= @country["callingCodes"][0] %><br>
-    Area: <%= @country["area"].round %> &#13218;
+    Country name: <%= @countryname %> <img src="/assets/flags/<%= @cntrycode %>.png"><br>
+    Capital: <%= @countrycapital %><br>
+    Region: <%= @countryregion %><br>
+    Population: <%= @countrypopulation %><br>
+    Calling code: +<%= @countrycallingcode %><br>
+    Area: <%= @countryarea.round %> &#13218;
   </div>
   <div class="country-info2">
     <h4 class="ctry-info-title">Country Info</h4>

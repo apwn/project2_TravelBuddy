@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160529011008) do
+ActiveRecord::Schema.define(version: 20160601235648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20160529011008) do
   end
 
   add_index "countries", ["user_id"], name: "index_countries_on_user_id", using: :btree
+
+  create_table "country_infos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "countrycode"
+    t.string   "capital"
+    t.string   "region"
+    t.integer  "population"
+    t.integer  "area"
+    t.string   "callingcode"
+    t.string   "demonym"
+    t.string   "currency"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
