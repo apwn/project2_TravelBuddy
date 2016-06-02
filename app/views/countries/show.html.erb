@@ -9,10 +9,10 @@
       <p>test</p>
     </div>
     <div class="legend-colors valign-wrapper row">
-      <div class='valign col'><div class='box-selected valign'></div></div>
+      <div class='valign col s1'><div class='box-selected valign'></div></div>
       <div class='col s5'><p>selected country</p></div>
-      <div class='col s1'></div>
-      <div class='col s5'></div>
+      <div class='col s1'>ddd</div>
+      <div class='col s5'>fff</div>
     </div>
   </div>
 
@@ -28,7 +28,9 @@
   </div>
   <div class="country-info2">
     <h4 class="ctry-info-title">Country Info</h4>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <% @twitter.search("france", result_type: "popular").take(3).collect do |tweet| %>
+     <%= "#{tweet.user.screen_name}: #{tweet.text}" %>
+     <% end %>
   </div>
   <div class="weather-info valign-wrapper">
 
@@ -42,7 +44,7 @@
     <% picsecret = @flickrimg["photos"]["photo"][i]["secret"] %>
     <% picfarm = @flickrimg["photos"]["photo"][i]["farm"] %>
     <% picserver = @flickrimg["photos"]["photo"][i]["server"] %>
-    <div class="gallery-cell"><img src="http://farm<%= picfarm %>.static.flickr.com/<%= picserver %>/<%= picid %>_<%= picsecret %>.jpg"></div>
+    <div class="gallery-cell"><img src="http://farm<%= picfarm %>.static.flickr.com/<%= picserver %>/<%= picid %>_<%= picsecret %>.jpg" class="materialboxed"></div>
   <% end %>
 </div>
 
