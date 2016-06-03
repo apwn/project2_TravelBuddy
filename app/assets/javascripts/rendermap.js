@@ -26,13 +26,21 @@ $(function(){
         }
       });
 
-      if (gon.country){
+      if (gon.country && !gon.countriescolor){
       var country = gon.country.toUpperCase();
       var countryColor = {};
       countryColor[country] = '#008080';
 
       var map = $('.world-map').vectorMap('get', 'mapObject');
       map.series.regions[0].setValues(countryColor);
+      }
+
+      if (gon.countriescolor){
+        var country = gon.country.toUpperCase();
+        gon.countriescolor[country] = '#008080';
+
+        var map = $('.world-map').vectorMap('get', 'mapObject');
+        map.series.regions[0].setValues(gon.countriescolor);
       }
 
       $('#visited-country-checkbox').on('click', function(){

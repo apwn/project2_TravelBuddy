@@ -11,6 +11,16 @@ class CountriesController < ApplicationController
     gon.country = @cntrycode
     @visitedcountries = Country.find_by(user_id: current_user, country: @cntrycode)
     @countryinfo = CountryInfo.find_by countrycode: @cntrycode
+    onevisitedcountry = Country.find_by user_id: current_user
+
+    if onevisitedcountry
+      countriescolor= {}
+      Country.where(user_id: current_user).find_each do |f|
+        country = f.country.upcase
+        countriescolor[country] = '#800020'
+      end
+      gon.countriescolor = countriescolor
+    end
 
     if @countryinfo
       @countryname = @countryinfo.name
