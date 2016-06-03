@@ -6,6 +6,8 @@ gem 'httparty'
 gem 'font-awesome-sass'
 gem 'gon', '~> 6.0', '>= 6.0.1'
 gem 'twitter', '~> 5.16'
+
+gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
