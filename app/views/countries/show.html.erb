@@ -1,5 +1,5 @@
 <div class="country-header">
-  <h2 class="map-title"><img src="/assets/flags/<%= @cntrycode %>.png"><%= @countryname.upcase %><img src="/assets/flags/<%= @cntrycode %>.png"></h2>
+  <h2 class="map-title"><%= image_tag("flags/#{@cntrycode}.png") %><%= @countryname.upcase %><%= image_tag("flags/#{@cntrycode}.png") %></h2>
 </div>
 
 <div class='world-map <%= "#{params[:id]}" %>'></div>
