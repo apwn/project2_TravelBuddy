@@ -63,7 +63,7 @@
   <div class="country-tweets">
     <h4 class="ctry-info-title">Twitter</h4>
     <% @twitter.search(@twittervar).take(2).collect do |tweet| %>
-     <p><img src="/assets/twitter-icon.png" class="twitter-icon"><a href="<%= tweet.user.uri %>/status/<%= tweet.id %>" target=_blank>@<%= "#{tweet.user.screen_name}" %></a><%=": #{tweet.full_text}" %></p>
+     <p><img src="<%= image_path("twitter-icon.png") %>" class="twitter-icon"><a href="<%= tweet.user.uri %>/status/<%= tweet.id %>" target=_blank>@<%= "#{tweet.user.screen_name}" %></a><%=": #{tweet.full_text}" %></p>
      <% end %>
   </div>
   <div class="weather-info valign-wrapper"></div>
