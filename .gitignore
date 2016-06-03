@@ -15,5 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-
-/app/controllers/countries_controller.rb

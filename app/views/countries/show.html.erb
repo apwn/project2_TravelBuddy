@@ -1,12 +1,31 @@
-<h4 class="center-align map-title">Map of <%= @countryname %></h4>
+<div class="country-header">
+  <h2 class="map-title"><img src="/assets/flags/<%= @cntrycode %>.png"><%= @countryname.upcase %><img src="/assets/flags/<%= @cntrycode %>.png"></h2>
+</div>
 
 <div class='world-map <%= "#{params[:id]}" %>'></div>
 
 
-<div class="">
+<div>
   <div class="map-legend">
-    <div class="visited-country valign-wrapper">
-      <p>test</p>
+    <div class="visited-country valign-wrapper row">
+      <% if @visitedcountries %>
+        <%= form_for @visitedcountries, :method => :patch do |f| %>
+        <input type="hidden" name="countryname" value="<%= @cntrycode %>">
+        <div class="col s2 visited-checkbox"><input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" checked>
+        <label for="visited-country-checkbox"></label></div>
+        <button type="submit"  class="cntrysave"></button>
+        <% end %>
+      <% end %>
+      <% if !@visitedcountries %>
+        <%= form_for :country do |f| %>
+        <input type="hidden" name="countryname" value="<%= @cntrycode %>">
+        <div class="col s2 visited-checkbox"><input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" >
+        <label for="visited-country-checkbox"></label></div>
+        <button type="submit" class="cntrysave"></button>
+        <% end %>
+      <% end %>
+
+      <div class="col s10"><p>Have you been to <%= @countryname %> ?</p></div>
     </div>
     <div class="legend-colors valign-wrapper row">
       <div class='valign col s1'><div class='box-selected valign'></div></div>
@@ -16,25 +35,38 @@
     </div>
   </div>
 
-<div class="country-details">
   <div class="country-info">
-    <h4 class="ctry-info-title">Country Info</h4>
-    Country name: <%= @countryname %> <img src="/assets/flags/<%= @cntrycode %>.png"><br>
-    Capital: <%= @countrycapital %><br>
-    Region: <%= @countryregion %><br>
-    Population: <%= @countrypopulation %><br>
-    Calling code: +<%= @countrycallingcode %><br>
-    Area: <%= @countryarea.round %> &#13218;
+    <table class="striped centered">
+    <thead>
+      <tr>
+          <th data-field="capital">Capital</th>
+          <th data-field="region">Region</th>
+          <th data-field="population">Population</th>
+          <th data-field="area">Area</th>
+          <th data-field="calling-code">Calling Code</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @countrycapital %></td>
+        <td><%= @countryregion %></td>
+        <td><%= @countrypopulation %></td>
+        <td><%= @countryarea.round %> &#13218;</td>
+        <td>+<%= @countrycallingcode %></td>
+      </tr>
+    </tbody>
+  </table>
   </div>
-  <div class="country-info2">
-    <h4 class="ctry-info-title">Country Info</h4>
-    <% @twitter.search("france", result_type: "popular").take(3).collect do |tweet| %>
-     <%= "#{tweet.user.screen_name}: #{tweet.text}" %>
+
+<div class="country-details">
+  <div class="country-tweets">
+    <h4 class="ctry-info-title">Twitter</h4>
+    <% @twitter.search(@twittervar).take(2).collect do |tweet| %>
+     <p><img src="/assets/twitter-icon.png" class="twitter-icon"><a href="<%= tweet.user.uri %>/status/<%= tweet.id %>" target=_blank>@<%= "#{tweet.user.screen_name}" %></a><%=": #{tweet.full_text}" %></p>
      <% end %>
   </div>
-  <div class="weather-info valign-wrapper">
-
-  </div>
+  <div class="weather-info valign-wrapper"></div>
 </div>
 
 <div class="country-pics gallery js-flickity"

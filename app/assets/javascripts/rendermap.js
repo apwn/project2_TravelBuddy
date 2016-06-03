@@ -35,7 +35,9 @@ $(function(){
       map.series.regions[0].setValues(countryColor);
       }
 
-
+      $('#visited-country-checkbox').on('click', function(){
+        $('.cntrysave').click();
+      });
 
 
 

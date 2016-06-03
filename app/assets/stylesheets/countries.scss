@@ -9,6 +9,20 @@
 
 .map-title {
   margin-top: 30px;
+  font-size: 3em;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+
+.country-header {
+  width: 100%;
+}
+
+.country-header img {
+  display: inline-block;
+  margin: 0 30px;
+  vertical-align: middle;
 }
 
 .map-legend {
@@ -20,7 +34,7 @@
 .visited-country,
 .legend-colors {
   border: 1px dotted #bfbfbf;
-  width: 40%;
+  width: 35%;
   border-radius: 3px;
   padding: 2px 5px;
   max-height: 30px;
@@ -33,25 +47,40 @@
   display: inline-block;
 }
 
+#visited-country-checkbox {
+  position: static;
+}
+
+.visited-country button {
+  display: none;
+}
+
 .country-details {
   display: flex;
   justify-content: space-around;
 }
 
 .country-info,
-.country-info2,
+.country-tweets,
 .weather-info {
   border: 1px dashed #bfbfbf;
   margin: 10px;
   padding: 10px;
-  height: 240px;
-  width: 30%;
 }
 
-.ctry-info-title {
-  font-size: 1.6em;
-  margin: 6px 0 10px;
-  text-align: center;
+.country-tweets {
+  width: 60%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.country-info {
+height: auto;
+}
+
+.weather-info{
+  width: 30%;
+  height: 240px;
 }
 
 .country-pics {
@@ -76,4 +105,13 @@
 /* cell inherit height from carousel */
 .gallery-cell {
   height: 100%;
+}
+
+.twitter-icon {
+  max-width: 24px;
+  margin: 0 10px;
+}
+
+.ctry-info-title {
+  text-align: center;
 }

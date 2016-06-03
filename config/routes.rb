@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  resources :countries, path: 'map'
+  resources :countries, :except => [:create], path: 'map'
+  post '/map/:id' => 'countries#create'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
