@@ -23,3 +23,5 @@ test:
 production:
   <<: *default
   database: 'worldmap'
+  user: 'xkedxnmhrucufs'
+  password: 'jTjLmzEZ7CtslGAocSG05sUZJm'
