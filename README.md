@@ -57,4 +57,7 @@ I have loads of ideas for the project! ([See my Trello](https://trello.com/b/2IO
 - twitter
 - jquery-rails
 
+***
+## Version Updates
 
+_To come..._
