@@ -16,7 +16,9 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
           <li><a href="<%= root_url %>map"><%= icon('map', '', class: 'left') %>Travel Maps</a></li>
+          <% if current_user.visited_countries > 0 %>
           <li><a href="<%= root_url %>user/<%= current_user.username %>/stats"><%= icon('map-marker', '', class: 'left') %>My Travel Profile</a></li>
+          <% end %>
           <li><a href="<%= user_path username: current_user.username %>"><%= icon('user', '', class: 'left') %><%= current_user.name %></a></li>
           <li><img src="<%= gravatar_for current_user %>?s=40&d=mm&r=pg" alt= <%= current_user.name %> class="nav-gravatar circle"></li>
           <li><a href="../logout"><%= icon("sign-out fa", '', class: 'valign') %></a></li>
