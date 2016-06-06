@@ -1,0 +1,110 @@
+.badge-display {
+  margin-top: 20px;
+  padding: 0 40px;
+}
+
+.badge-display p {
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.badgecount p {
+  margin-right: 40px;
+  padding: 7px;
+  font-size: 1.5em;
+  font-weight: 600;
+  background-color: #00665c;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.userbadges h3 {
+  margin-left: 40px;
+}
+
+.stay-at-home {
+  	background: url('travelbadges.png') no-repeat -420px -285px;
+  	width: 107px;
+  	height: 108px;
+    margin: auto;
+  }
+
+.day-tripper {
+	background: url('travelbadges.png') no-repeat -20px -153px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.explorer {
+	background: url('travelbadges.png') no-repeat -287px -287px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.itinerant {
+	background: url('travelbadges.png') no-repeat -20px -420px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.frequent-flyer {
+	background: url('travelbadges.png') no-repeat -553px -20px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.world-nomad {
+	background: url('travelbadges.png') no-repeat -420px -20px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.bird-of-passage {
+	background: url('travelbadges.png') no-repeat -20px -20px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.travel-hero {
+	background: url('travelbadges.png') no-repeat -153px -287px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.nature-lover {
+	background: url('travelbadges.png') no-repeat -153px -153px;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.eskimo {
+	background: url('eskimobadge.png') no-repeat;
+  background-size: cover;
+  border: 2px solid #95A83D;
+  border-radius: 50%;
+	width: 107px;
+	height: 107px;
+  margin: auto;
+}
+
+.leprechaun {
+	background: url('leprechaunbadge.png') no-repeat;
+  background-size: cover;
+	width: 107px;
+	height: 110px;
+  margin: auto;
+}
+
+.locked {
+  background: url('lockedbadge.png') no-repeat;
+  background-size: cover;
+  border: none;
+}

@@ -1,0 +1,67 @@
+<h1 class="statsheader">My Travel Stats</h1>
+<div class="divider"></div>
+
+<div class="totalvisited">
+  <p>You have seen <%= @uservisitedcountries %> countries so far ! <span class="remainingtxt">Only <%= @userremainingcountries %> left <%= icon('thumbs-o-up') %></span></p>
+</div>
+
+<div id="visitedchart"></div>
+
+<div class="userbadges">
+  <div class="valign-wrapper row">
+    <div class="col s10"><h3>Your Badges</h3></div>
+    <div class="col s2 valign center-align badgecount"><p><%= @userbadgescount %> / 11</p></div>
+  </div>
+
+  <div class="row badge-display center-align">
+    <div class="col s3">
+      <div class="stay-at-home <% if !@badge.stay_at_home %>locked<% end %>"></div>
+      <p>Stay-at-Home</p>
+    </div>
+    <div class="col s3">
+      <div class="day-tripper <% if !@badge.day_tripper %>locked<% end %>"></div>
+      <p>Day Tripper</p>
+    </div>
+    <div class="col s3">
+      <div class="explorer <% if !@badge.explorer %>locked<% end %>"></div>
+      <p>Explorer</p>
+    </div>
+    <div class="col s3">
+      <div class="itinerant <% if !@badge.itinerant %>locked<% end %>"></div>
+      <p>Itinerant</p>
+    </div>
+  </div>
+  <div class="row badge-display center-align">
+    <div class="col s3">
+      <div class="frequent-flyer <% if !@badge.frequent_flyer %>locked<% end %>"></div>
+      <p>Frequent Flyer</p>
+    </div>
+    <div class="col s3">
+      <div class="world-nomad <% if !@badge.world_nomad %>locked<% end %>"></div>
+      <p>World Nomad</p>
+    </div>
+    <div class="col s3">
+      <div class="bird-of-passage <% if !@badge.bird_of_passage %>locked<% end %>"></div>
+      <p>Bird of Passage</p>
+    </div>
+    <div class="col s3">
+      <div class="travel-hero <% if !@badge.travel_hero %>locked<% end %>"></div>
+      <p>Travel Hero</p>
+    </div>
+  </div>
+  <div class="row badge-display center-align">
+    <div class="col s3">
+      <div class="nature-lover <% if !@badge.nature_lover %>locked<% end %>"></div>
+      <p>Nature Lover</p>
+    </div>
+    <div class="col s3">
+      <div class="eskimo <% if !@badge.eskimo %>locked<% end %>"></div>
+      <p>Eskimo</p>
+    </div>
+    <div class="col s3">
+      <div class="leprechaun <% if !@badge.leprechaun %>locked<% end %>"></div>
+      <p>Leprechaun</p>
+    </div>
+  </div>
+
+</div>

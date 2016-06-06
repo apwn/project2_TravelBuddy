@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
   def new
     @user = User.new
 
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
       if @user.save
         session[:user_id] = @user.id
-        redirect_to '/'
+        redirect_to countries_path
       else
         render :new
       end
@@ -39,6 +39,21 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     @user.destroy
     redirect_to '/'
+  end
+
+  def stats
+    if current_user
+      @user = current_user
+      @badge = Badge.find_by user_id: @user
+      @uservisitedcountries = @user.visited_countries
+      @userbadgescount = @user.badges_count
+      @userremainingcountries = 176 - @uservisitedcountries
+      gon.visited = @uservisitedcountries
+      gon.remaining = @userremainingcountries
+      render :stats
+    else
+      redirect_to :login
+    end
   end
 
 private

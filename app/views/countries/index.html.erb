@@ -1,3 +1,14 @@
 <h4 class="center-align map-title">Where do you want to travel to?</h4>
 
 <div class="world-map"></div>
+
+<% if @onevisitedcountry %>
+<div class="row" id="map-legend">
+  <div class="col s2 offset-s8">
+    <div class="legend-colors valign-wrapper">
+      <div class='col s2'><div class='box-visited valign'></div></div>
+      <div class='col s10'><p>visited countries</p></div>
+    </div>
+  </div>
+</div>
+<% end %>

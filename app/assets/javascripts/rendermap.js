@@ -3,7 +3,7 @@ $(function(){
 
       $('.world-map').vectorMap({
         map: 'world_mill',
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
         regionStyle: {
           initial: {
             fill: 'orange',
@@ -36,9 +36,10 @@ $(function(){
       }
 
       if (gon.countriescolor){
+        if (gon.country){
         var country = gon.country.toUpperCase();
         gon.countriescolor[country] = '#008080';
-
+        }
         var map = $('.world-map').vectorMap('get', 'mapObject');
         map.series.regions[0].setValues(gon.countriescolor);
       }

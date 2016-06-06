@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .world-map {
-  margin: 40px 0;
+  margin: 40px 0 10px;
   height: 370px;
 }
 
@@ -25,30 +25,40 @@
   vertical-align: middle;
 }
 
-.map-legend {
-  display: flex;
-  justify-content: space-around;
+#map-legend {
   margin-bottom: 10px;
 }
 
-.visited-country,
-.legend-colors {
-  border: 1px dotted #bfbfbf;
-  width: 35%;
-  border-radius: 3px;
+.visited-country, {
+  margin: 0 auto 20px;
+  background: #ffe4b3;
+  width: 50%;
+  border-radius: 10px;
   padding: 2px 5px;
-  max-height: 30px;
+}
+
+.visited-country form {
+  display: inline-block;
 }
 
 .visited-country p,
 .legend-colors p {
-  margin: 0;
+  // margin: 0;
   font-size: 0.9em;
   display: inline-block;
 }
 
-#visited-country-checkbox {
-  position: static;
+.visited-country p {
+  font-size: 1.3em;
+  margin: 7px;
+}
+
+.visited-cntry-info {
+  margin: auto;
+}
+
+.visited-cntry-info [type="checkbox"] + label {
+  height:18px;
 }
 
 .visited-country button {
@@ -63,7 +73,7 @@
 .country-info,
 .country-tweets,
 .weather-info {
-  border: 1px dashed #bfbfbf;
+  // border: 1px dashed #bfbfbf;
   margin: 10px;
   padding: 10px;
 }
@@ -72,20 +82,31 @@
   width: 60%;
   height: 240px;
   overflow: hidden;
+  font-size: 0.9em;
+  background-color: #ffedcc;
+  border-radius: 10px;
+}
+
+.country-tweets p {
+  padding: 5px 10px;
+  margin-top: 0;
 }
 
 .country-info {
 height: auto;
+background-color: #f2f2f2;
+border-radius: 10px;
 }
 
 .weather-info{
   width: 30%;
   height: 240px;
+  border-radius: 10px;
 }
 
 .country-pics {
   width: 100%;
-  border: 1px dashed #bfbfbf;
+  border-radius: 10px;
   margin: 30px 0 50px;
   // height: 200px;
   // margin: 20px 0 40px;
@@ -120,4 +141,10 @@ height: auto;
 
 .ctry-info-title {
   text-align: center;
+}
+
+#disqus_thread {
+  background: #f2f2f2;
+  border-radius: 5px;
+  padding: 20px;
 }

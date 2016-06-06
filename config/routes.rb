@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   resources :users, :only => [:show, :update, :destroy], param: :username, path: 'user'
 
+  get '/user/:username/stats' => 'users#stats'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

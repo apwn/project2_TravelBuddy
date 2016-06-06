@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= include_gon(:init => true) %>
   <%= javascript_include_tag 'application' %>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,7 +15,8 @@
         <a href="/" class="brand-logo">Travel Maps</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if current_user %>
-          <li><a href="../map"><%= icon('map', '', class: 'left') %>Travel Maps</a></li>
+          <li><a href="<%= root_url %>map"><%= icon('map', '', class: 'left') %>Travel Maps</a></li>
+          <li><a href="<%= root_url %>user/<%= current_user.username %>/stats"><%= icon('map-marker', '', class: 'left') %>My Travel Profile</a></li>
           <li><a href="<%= user_path username: current_user.username %>"><%= icon('user', '', class: 'left') %><%= current_user.name %></a></li>
           <li><img src="<%= gravatar_for current_user %>?s=40&d=mm&r=pg" alt= <%= current_user.name %> class="nav-gravatar circle"></li>
           <li><a href="../logout"><%= icon("sign-out fa", '', class: 'valign') %></a></li>

@@ -5,38 +5,46 @@
 <div class='world-map <%= "#{params[:id]}" %>'></div>
 
 
-<div>
-  <div class="map-legend">
-    <div class="visited-country valign-wrapper row">
-      <% if @visitedcountries %>
-        <%= form_for @visitedcountries, :method => :patch do |f| %>
-        <input type="hidden" name="countryname" value="<%= @cntrycode %>">
-        <div class="col s2 visited-checkbox"><input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" checked>
-        <label for="visited-country-checkbox"></label></div>
-        <button type="submit"  class="cntrysave"></button>
-        <% end %>
-      <% end %>
-      <% if !@visitedcountries %>
-        <%= form_for :country do |f| %>
-        <input type="hidden" name="countryname" value="<%= @cntrycode %>">
-        <div class="col s2 visited-checkbox"><input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" >
-        <label for="visited-country-checkbox"></label></div>
-        <button type="submit" class="cntrysave"></button>
-        <% end %>
-      <% end %>
-
-      <div class="col s10"><p>Have you been to <%= @countryname %> ?</p></div>
-    </div>
-    <div class="legend-colors valign-wrapper row">
+<div class="row" id="map-legend">
+  <div class="col s4 offset-s7">
+    <div class="legend-colors valign-wrapper">
       <div class='valign col s1'><div class='box-selected valign'></div></div>
       <div class='col s5'><p>selected country</p></div>
       <div class='col s1'><div class='box-visited valign'></div></div>
       <div class='col s5'><p>visited countries</p></div>
     </div>
   </div>
+</div>
+
+  <div class="visited-country valign-wrapper">
+    <div class="visited-cntry-info">
+    <% if @visitedcountries %>
+      <%= form_for @visitedcountries, :method => :patch do |f| %>
+      <input type="hidden" name="countryname" value="<%= @cntrycode %>">
+      <!-- <div class="visited-checkbox"> -->
+        <input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" checked>
+        <label for="visited-country-checkbox"></label>
+      <!-- </div> -->
+      <button type="submit"  class="cntrysave"></button>
+      <% end %>
+    <% end %>
+    <% if !@visitedcountries %>
+      <%= form_for :country do |f| %>
+      <input type="hidden" name="countryname" value="<%= @cntrycode %>">
+      <!-- <div class="visited-checkbox"> -->
+        <input type="checkbox" name="country" class="filled-in valign" id="visited-country-checkbox" >
+        <label for="visited-country-checkbox"></label>
+      <!-- </div> -->
+      <button type="submit" class="cntrysave"></button>
+      <% end %>
+    <% end %>
+
+    <p>Have you been to <%= @countryname %> ?</p>
+    </div>
+  </div>
 
   <div class="country-info">
-    <table class="striped centered">
+    <table class="centered">
     <thead>
       <tr>
           <th data-field="capital">Capital</th>
@@ -61,8 +69,8 @@
 
 <div class="country-details">
   <div class="country-tweets">
-    <h4 class="ctry-info-title">Twitter</h4>
-    <% @twitter.search(@twittervar).take(2).collect do |tweet| %>
+    <!-- <h4 class="ctry-info-title">Twitter</h4> -->
+    <% @twitter.search(@twittervar).take(3).collect do |tweet| %>
      <p><img src="<%= image_path("twitter-icon.png") %>" class="twitter-icon"><a href="<%= tweet.user.uri %>/status/<%= tweet.id %>" target=_blank>@<%= "#{tweet.user.screen_name}" %></a><%=": #{tweet.full_text}" %></p>
      <% end %>
   </div>
@@ -81,6 +89,3 @@
 </div>
 
 <div id="disqus_thread"></div> <script>var disqus_config = function () { this.page.url = PAGE_URL; this.page.identifier = PAGE_IDENTIFIER; }; (function() { var d = document, s = d.createElement('script'); s.src = '//travelmapsio.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })(); </script> <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-</div>
