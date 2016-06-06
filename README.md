@@ -1,5 +1,5 @@
 # Travel maps
-###### Beta Version .5
+###### Beta Version .5 (_[see updates](#version-updates)_)
 
 You can see a live version of the website here --> [TravelMaps.io](http://www.travelmaps.io)
 
@@ -58,6 +58,6 @@ I have loads of ideas for the project! ([See my Trello](https://trello.com/b/2IO
 - jquery-rails
 
 ***
-## Version Updates
+### Version Updates
 
 _To come..._
