@@ -17,6 +17,7 @@ You can see a live version of the website here --> [TravelMaps.io](http://www.tr
 
 - Push ruby variables to js (solved using the [Gon gem](https://github.com/gazay/gon))
 - Work with the Vector Map 
+- Use image sprites for the badges
 
 ***
 ## Future improvements
