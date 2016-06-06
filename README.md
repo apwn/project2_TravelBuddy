@@ -5,10 +5,10 @@ You can see a live version of the website here --> [TravelMaps.io](http://www.tr
 
 ## Functionalities
 
--- See country information / tweets / images / weather
--- Add visited countries to profile
--- See travel stats
--- Earn badges!
+- See country information / tweets / images / weather
+- Add visited countries to profile
+- See travel stats
+- Earn badges!
 ***
 
 ## Challenges
