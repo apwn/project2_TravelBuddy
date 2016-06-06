@@ -32,11 +32,6 @@ You can see a live version of the website here --> [TravelMaps.io](http://www.tr
 I have loads of ideas for the project! ([See my Trello](https://trello.com/b/2IODzoFf/travel-maps-app))
 
 ***
-## Version Updates
-
-_To come..._
-
-***
 ## Tech stuff
 
 **APIs**
@@ -62,4 +57,7 @@ _To come..._
 - twitter
 - jquery-rails
 
+***
+## Version Updates
 
+_To come..._
